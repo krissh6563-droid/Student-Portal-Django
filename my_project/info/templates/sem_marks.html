@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container  border mt-4 mb-4">
+    <h2>Exam Detail</h2>
+    
+    <table class="table table-bordered text-center">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Status</th>
+                <th></th>
+                
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Unit Test 1</td>
+                <td>Unmarked</td>
+                <td><a href="{% url 'marks_edit' %}"><button type="button" class="btn btn-primary">Edit Marks</button></a></td>
+            </tr>
+            <tr>
+                <td>Unit Test 2</td>
+                <td>Unmarked</td>
+                <td><button type="button" class="btn btn-primary">Edit Marks</button></td>
+            </tr>
+            <tr>
+                <td>Pre Exam</td>
+                <td>Unmarked</td>
+                <td><button type="button" class="btn btn-primary">Edit Marks</button></td>
+            </tr>
+        </tbody>
+    </table>
+    
+</div>
+{% endblock %}

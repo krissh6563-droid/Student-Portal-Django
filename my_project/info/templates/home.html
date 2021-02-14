@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<!-- Jumbotron -->
+<div class="container mt-2">
+    <div class="jumbotron">
+        <h1>Welcome to RIMT</h1>
+        <p>Department of Computer Science & Engineering</p>
+    </div>
+
+</div>
+
+
+<!-- Card Detail-->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card" style="width:250px">
+                <img class="card-img-top" src="{% static '/images/attendance.png' %}" alt="Card image">
+                <div class="card-body">
+                    <h4 class="card-title">Attendance</h4>
+                    <p class="card-text">Enter the attendance of the students based on the class they are in.</p>
+
+                </div>
+                <div class="card-footer text-center">
+                    <a class="btn btn-primary" role="button" href="#"> View Attendance</a>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card" style="width:250px">
+                <img class="card-img-top" src="{% static '/images/marks.png' %}" alt="Card image">
+                <div class="card-body">
+                    <h4 class="card-title">Marks</h4>
+                    <p class="card-text">Enter the marks of the students based on the class they are in.</p>
+
+                </div>
+                <div class="card-footer text-center">
+                    <a class="btn btn-primary" role="button" href="{% url 'years_list' %}">Enter Marks</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card" style="width:250px">
+                <img class="card-img-top" src="{% static '/images/time_table.png' %}" alt="Card image">
+                <div class="card-body">
+                    <h4 class="card-title">Time Table</h4>
+                    <p class="card-text">View the timetable in a tabular form. For a particular class.</p>
+
+                </div>
+                <div class="card-footer text-center">
+                    <a class="btn btn-primary" role="button" href="#"> View Time Table</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card" style="width:250px">
+                <img class="card-img-top" src="{% static '/images/report.png' %}" alt="Card image">
+                <div class="card-body">
+                    <h4 class="card-title">Reports</h4>
+                    <p class="card-text">Generate reports for each class and their respective CIE and Attendance.</p>
+
+                </div>
+                <div class="card-footer text-center">
+                    <a class="btn btn-primary" role="button" href="#">Generate Report</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

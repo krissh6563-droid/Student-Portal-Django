@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<!-- Jumbotron -->
+<div class="container mt-2 text-center">
+    <div class="jumbotron">
+        <h1>Select the Year</h1>
+        <p>Department of Computer Science & Engineering</p>
+    </div>
+
+</div>
+
+
+<!-- Card Detail-->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card" style="width:250px">
+                <img class="card-img-top" src="{% static '/images/marks.png' %}" alt="Card image">
+                <div class="card-body">
+                    <h4 class="card-title">First Year</h4>
+                    <p class="card-text">Don't tell student how poor they are in Exam</p>
+
+                </div>
+                <div class="card-footer text-center">
+                    <a class="btn btn-primary" role="button" href="{% url 'sub_list' %}">Enter Marks</a>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card" style="width:250px">
+                <img class="card-img-top" src="{% static '/images/marks.png' %}" alt="Card image">
+                <div class="card-body">
+                    <h4 class="card-title">Second Year</h4>
+                    <p class="card-text">Don't tell student how poor they are in Exam</p>
+
+                </div>
+                <div class="card-footer text-center">
+                    <a class="btn btn-primary" role="button" href="{% url 'sub_list' %}">Enter Marks</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card" style="width:250px">
+                <img class="card-img-top" src="{% static '/images/marks.png' %}" alt="Card image">
+                <div class="card-body">
+                    <h4 class="card-title">Third Year</h4>
+                    <p class="card-text">Don't tell student how poor they are in Exam</p>
+
+                </div>
+                <div class="card-footer text-center">
+                    <a class="btn btn-primary" role="button" href="{% url 'sub_list' %}">Enter Marks</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card" style="width:250px">
+                <img class="card-img-top" src="{% static '/images/marks.png' %}" alt="Card image">
+                <div class="card-body">
+                    <h4 class="card-title">Final Year</h4>
+                    <p class="card-text">Don't tell student how poor they are in Exam</p>
+
+                </div>
+                <div class="card-footer text-center">
+                    <a class="btn btn-primary" role="button" href="{% url 'sub_list' %}">Enter Marks</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

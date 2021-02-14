@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container  border mt-4 mb-4">
+    <h2>Odd Sem Subjects</h2>
+    
+    <table class="table table-bordered text-center">
+        <thead>
+            <tr>
+                <th>Subjects</th>
+                <th></th>
+                <th></th>
+                
+                
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in student_name %}
+            <tr>
+                <td>{{ student.name }}</td>
+                <td><a href="{% url 'sem_marks' %}"><button type="button" class="btn btn-success">Enter Marks</button></a></td>
+                <td><a href="{% url 'view_student' %}"><button type="button" class="btn btn-primary">View Marks</button></a></td>
+            </tr>
+            {% endfor %}
+            
+        </tbody>
+    </table>
+    <h2>Even Sem Subjects</h2>
+    
+    <table class="table table-bordered text-center">
+        <thead>
+            <tr>
+                <th>Subjects</th>
+                <th></th>
+                <th></th>
+                
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Software Engineering</td>
+                <td><a href="{% url 'sem_marks' %}"><button type="button" class="btn btn-success">Enter Marks</button></a></td>
+                <td><a href="{% url 'view_student' %}"><button type="button" class="btn btn-primary">View Marks</button></a></td>
+            </tr>
+            <tr>
+                <td>Database Management</td>
+                <td><button type="button" class="btn btn-success">Enter Marks</button></td>
+                <td><button type="button" class="btn btn-primary">View Student</button></td>
+            </tr>
+            <tr>
+                <td>Operatig System</td>
+                <td><button type="button" class="btn btn-success">Enter Marks</button></td>
+                <td><button type="button" class="btn btn-primary">View Student</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+{% endblock %}

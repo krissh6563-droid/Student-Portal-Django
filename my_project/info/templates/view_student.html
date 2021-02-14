@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container  border mt-4 mb-4">
+    <h2>Marks</h2>
+    
+    <table class="table table-bordered text-center">
+        <thead>
+            <tr>
+                <th>Roll No.</th>
+                <th>Name </th>
+                <th>Test_1(Odd Sem)</th>
+                <th>Test_2(Odd Sem)</th>
+                <th>Pre Exam(Odd Sem)</th>
+                <th>Test_1(Even Sem)</th>
+                <th>Test_2(Even Sem)</th>
+                <th>Pre Exam(Even Sem)</th>    
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in student %}
+            <tr>
+                <th>{{student.roll_number }}</th>
+                <th>{{ student.student_name }}</th>
+                <td>{{ student.test_1 }}</td>
+                <td>{{ student.test_2 }}</td>
+                <td>{{ student.pre_exam_1 }}</td>
+                <td>{{ student.test_3 }}</td>
+                <td>{{ student.test_4 }}</td>
+                <td>{{ student.pre_exam_2 }}</td>
+            </tr>
+            {% endfor %}
+            
+        </tbody>
+    </table>
+</div>
+{% endblock %}
