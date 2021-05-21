@@ -1,0 +1,68 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Student ERP</title>
+    <link rel="stylesheet" href="{% static '/assets/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static '/https://fonts.googleapis.com/css?family=Lora' %}">
+    <link rel="stylesheet" href="{% static '/assets/fonts/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static '/assets/fonts/ionicons.min.css' %}">
+    <link rel="stylesheet" href="{% static '/assets/css/Article-Clean.css' %}">
+    <link rel="stylesheet" href="{% static '/assets/css/card-3-column-animation-shadows-images.css' %}">
+    <link rel="stylesheet" href="{% static '/assets/css/Footer-Dark.css' %}">
+    <link rel="stylesheet" href="{% static '/https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static '/assets/css/Login-Form-Clean.css' %}">
+    <link rel="stylesheet" href="{% static '/assets/css/styles.css' %}">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-md shadow">
+        <div class="container-fluid"><a class="navbar-brand" href="#">RIMT</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Marks</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Attendance</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Time Table</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">User</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    {% block content %}
+    
+    {% endblock %}
+    <footer class="footer-dark">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-md-3 item">
+                    <h3>Head of Department</h3>
+                    <p>Mrs. Jyoti Agarwal</p>
+                </div>
+                <div class="col-sm-6 col-md-3 item">
+                    <h3>Faculty&nbsp;</h3>
+                    <ul>
+                        <li><a href="#">Mrs. Sangeeta Lalwani</a></li>
+                        <li><a href="#">Miss. Kajal</a></li>
+                        <li><a href="#">Miss. Anushka Sen</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6 item text">
+                    <h3>Rajshree Institute of Management &amp; Technology, Bareilly (U.P)</h3>
+                    <p>Address :&nbsp;16 KM, National Highway 30, Pilibhit Rd, Bareilly, Uttar Pradesh 243122<br>Phone No: 09690000100</p>
+                </div>
+                <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-linkedin"></i></a><a href="#"><i class="icon ion-social-github"></i></a></div>
+            </div>
+            <p class="copyright">krissh6563 © 2021</p>
+        </div>
+    </footer>
+    <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+    <script src="{% static 'assets/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/js/bs-init.js' %}"></script>
+</body>
+
+</html>
