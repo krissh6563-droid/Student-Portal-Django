@@ -3,9 +3,6 @@
 {% load static %}
 
 {% block content %}
-
-
-
 <div id="promo">
     <div class="jumbotron text-center">
         <h1>RIMT&nbsp;</h1>
@@ -24,9 +21,10 @@
                         <h3 class="text-center card-title" style="font-family: Antic, sans-serif;color: rgb(81,87,94);">
                             Student Detail</h3>
                         <p class="card-text" style="font-family: Antic, sans-serif;color: rgb(81,87,94);"></p>
-                        <p id="lorem">See all the information of a student of college, Computer Science Department.</p><a class="btn btn-outline-success text-center"
-                            role="button" style="font-weight: normal;font-family: Antic, sans-serif;"
-                            href="#">View Detail</a>
+                        <p id="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                            incididunt ut labore et dolore magna aliqua. Arcu ac tortor dignissim convallis aenean.
+                            Dignissim cras tincidunt.</p><a class="btn btn-outline-success text-center" role="button"
+                            style="font-weight: normal;font-family: Antic, sans-serif;" href="{% url 'student_detail' %}">View</a>
                     </div>
                 </div>
             </div>
@@ -35,9 +33,12 @@
                 <div class="text-center bg-light border rounded shadow card" data-bss-hover-animate="pulse"><i
                         class="fa fa-pencil"></i>
                     <div class="text-center card-body">
-                        <h3 class="card-title" style="font-family: Antic, sans-serif;color: rgb(81,87,94);">Marks Detail</h3>
-                        <p id="lorem"> See performance of student in different exam  of college, Computer Science Department.</p><a class="btn btn-outline-success" role="button"
-                            style="font-weight: normal;font-family: Antic, sans-serif;" href="#">Enter & View</a>
+                        <h3 class="card-title" style="font-family: Antic, sans-serif;color: rgb(81,87,94);">Marks</h3>
+                        <p class="card-text" style="font-family: Antic, sans-serif;color: rgb(81,87,94);"></p>
+                        <p id="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                            incididunt ut labore et dolore magna aliqua. Arcu ac tortor dignissim convallis aenean.
+                            Dignissim cras tincidunt.</p><a class="btn btn-outline-success" role="button"
+                            style="font-weight: normal;font-family: Antic, sans-serif;" href="{% url 'marks_detail' %}">View</a>
                     </div>
                 </div>
             </div>
@@ -49,12 +50,15 @@
                         <h3 class="card-title" style="font-family: Antic, sans-serif;color: rgb(81,87,94);">Time Table
                         </h3>
                         <p class="card-text" style="font-family: Antic, sans-serif;color: rgb(81,87,94);"></p>
-                        <p id="lorem">See the schedule of all the classes of Computer Science Department.</p><a class="btn btn-outline-success" role="button"
-                            style="font-weight: normal;font-family: Antic, sans-serif;" href="#">View</a>
+                        <p id="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                            incididunt ut labore et dolore magna aliqua. Arcu ac tortor dignissim convallis aenean.
+                            Dignissim cras tincidunt.</p><a class="btn btn-outline-success" role="button"
+                            style="font-weight: normal;font-family: Antic, sans-serif;" href="{% url 'time_table' %}">View</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
 {% endblock %}

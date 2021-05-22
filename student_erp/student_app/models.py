@@ -22,7 +22,6 @@ class marks_detail(models.Model):
     roll_number = models.IntegerField()
     student_name = models.CharField(max_length=50)
     year =  models.IntegerField()
-    branch = models.CharField(max_length=30)
     subject_name = models.CharField(max_length=30)
     exam_type = models.CharField(max_length=30)
     total_marks = models.IntegerField()

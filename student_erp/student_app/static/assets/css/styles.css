@@ -40,7 +40,7 @@
   font-size: 30px;
 }
 
-.nav-item:hover {
+#navcol-1 .nav-item:hover {
   border-radius: 5px;
   background-color: #90ee90;
 }
@@ -49,19 +49,15 @@
   padding: 10px;
 }
 
-@media (min-width: 992px) {
-  .btn.btn-primary {
-    border-color: #90ee90;
-    font-size: 20px;
-    margin-top: 20px;
-    background-color: #90ee90;
-  }
+#promo .jumbotron p .btn.btn-primary {
+  border-color: #90ee90;
+  font-size: 20px;
+  margin-top: 20px;
+  background-color: #90ee90;
 }
 
-.btn.btn-primary {
-  border-color: #90ee90;
-  font-size: 30px;
-  margin-top: 20px;
+#time_table button {
+  margin-top: 10px;
   background-color: #90ee90;
 }
 
