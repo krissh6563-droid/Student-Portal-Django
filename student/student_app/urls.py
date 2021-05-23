@@ -8,8 +8,9 @@ urlpatterns = [
     path('marks_detail',views.marks_detail,name='marks_detail'),
     path('time_table',views.time_table,name='time_table'),
     path('add_student_detail',views.add_student_detail,name='add_student_detail'),
-    #path('view_student_detail',views.view_student_detail,name='view_student_detail'),
-    path('add_marks',views.add_marks,name='add_marks')
+    path('add_marks',views.add_marks,name='add_marks'),
+    path('view_students',views.view_students,name='view_students'),
+    path('view_marks',views.view_marks,name='view_marks'),
 
     
 ]

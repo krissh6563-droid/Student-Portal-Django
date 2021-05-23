@@ -5,28 +5,19 @@
   font-size: 14px;
 }
 
-.article-clean .intro {
+/* .article-clean .intro {
   font-size: 16px;
   margin: 0 auto 30px;
-}
+} */
 
-.article-clean .intro h1 {
-  font-size: 32px;
-  margin-bottom: 15px;
-  padding-top: 20px;
-  line-height: 1.5;
-  color: inherit;
-  margin-top: 20px;
-}
-
-.article-clean .intro p {
+/* .article-clean .intro p {
   color: #929292;
   font-size: 12px;
-}
+} */
 
-.article-clean .intro p .by {
+/* .article-clean .intro p .by {
   font-style: italic;
-}
+} */
 
 .article-clean .intro p .date {
   text-transform: uppercase;
@@ -83,6 +74,6 @@
 }
 
 .article-clean {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 

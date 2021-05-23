@@ -16,10 +16,19 @@
         <div id="nav-tabContent" class="tab-content">
             <div id="item-1-1" class="tab-pane fade show active" role="tabpanel" aria-labelledby="item-1-1-tab">
                 <div class="container">
-                    <form class="form-inline mb-2" method="POST" action="#">
+                    <form action="/view_students" method="POST" class="form-inline mb-2" >
                         {% csrf_token %}
-                        <div class="form-group"><input class="form-control" type="text" placeholder="Input Year"></div>
-                        <button class="btn btn-primary ml-2" type="button">View</button>
+                        <div class="form-group">
+                            <label for="inputState">Select Year</label>
+                            <select id="inputState" class="form-control ml-4 mr-2" name="year">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                            </select>
+                        </div>
+
+                        <button  type="submit" class="btn btn-primary ml-2" >View</button>
                     </form>
                     <table  class="table table-striped table-bordered" cellspacing="0" width="100%">
                         <thead>
@@ -35,15 +44,17 @@
                             </tr>
                         </thead>
                         <tbody>
+                            {% for item in data %}
                             <tr>
-                                <td>Tiger Nixon</td>
-                                <td>System Architect</td>
-                                <td>Edinburgh</td>
-                                <td>61</td>
-                                <td>2011/04/25</td>
-                                <td>$320,800</td>
-                                <td>Hello</td>
-                            </tr>   
+                                <td>{{ item.roll_number }}</td>
+                                <td>{{ item.student_name }}</td>
+                                <td>{{ item.year }}</td>
+                                <td>{{ item.father_name }}</td>
+                                <td>{{ item.mobile_number }}</td>
+                                <td>{{ item.mail }}</td>
+                                <td>{{ item.address }}</td>
+                            </tr>  
+                            {% endfor %} 
                         </tbody>
                     </table>
                 </div>
