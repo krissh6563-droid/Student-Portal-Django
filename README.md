@@ -5,4 +5,3 @@ Screenshot of the projects:
 
 ![Screenshot (194)](https://user-images.githubusercontent.com/56572543/119272489-c5013500-bc23-11eb-8caf-07ced0a01b29.png)
 
-![Screenshot (195)](https://user-images.githubusercontent.com/56572543/119272532-ff6ad200-bc23-11eb-90ca-2fc0182a9412.png)
