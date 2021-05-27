@@ -12,8 +12,9 @@
     <link rel="stylesheet" href="{% static 'assets/css/Article-Clean.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/card-3-column-animation-shadows-images.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/Footer-Dark.css' %}">
+    <!--
     <link rel="stylesheet" href="{% static 'assets/css/Login-Form-Clean.css' %}">
-
+    -->
     <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
 </head>
 
@@ -26,7 +27,7 @@
                     <li class="nav-item"><a class="nav-link" href="{% url 'student_detail' %}">Student Detail</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'marks_detail' %}">Marks</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'time_table' %}">Time Table</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Logout</a></li>
                 </ul>
             </div>
         </div>
@@ -60,9 +61,14 @@
             <p class="copyright">krissh6563 © 2021</p>
         </div>
     </footer>
+    <script src="{% static 'assets/js/index.js' %}"></script>
     <script src="{% static 'assets/js/jquery.min.js' %}"></script>
     <script src="{% static 'assets/bootstrap/js/bootstrap.min.js' %}"></script>
     <script src="{% static 'assets/js/bs-init.js' %}"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        swal("Added Successfully")
+    </script>
 </body>
 
 </html>

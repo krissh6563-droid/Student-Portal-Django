@@ -1,9 +1,11 @@
 # Create your views here.
 from django.db import connections, connection
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.http import HttpResponse, request
 from .models import Students_detail
 from .models import Marks_detail
+from django.contrib import messages
+from django.contrib.auth.models import User,auth
 
 # Create your views here.
 
@@ -19,43 +21,60 @@ def marks_detail(request):
 def time_table(request):
     return render(request,'time_table.html')
 
+def login(request):
+    if request.method=='POST':
+        user = request.POST['username']
+        pass_1 = request.POST['password']
+        user = auth.authenticate(username = user,password=pass_1)
+        if user is not None:
+            auth.login(request,user)
+            return render(request,'home.html')
+    
+
+    return render(request, 'login.html')
+
 def add_student_detail(request):
-    s_roll = request.POST['roll_number']
-    s_name = request.POST['student_name']
-    s_father_name = request.POST['father_name']
-    s_study_year = request.POST['year']
-    s_mobile = request.POST['mobile_number']
-    s_gmail = request.POST['email']
-    s_add = request.POST['address']
-    student_info = Students_detail(roll_number=s_roll,student_name = s_name, year = s_study_year,father_name = s_father_name,mobile_number = s_mobile,mail=s_gmail,address=s_add)
-    student_info.save()
-    return render(request,'student_detail.html')
+    if request.method=='POST':
+        s_roll = request.POST['roll_number']
+        s_name = request.POST['student_name']
+        s_father_name = request.POST['father_name']
+        s_study_year = request.POST['year']
+        s_mobile = request.POST['mobile_number']
+        s_gmail = request.POST['email']
+        s_add = request.POST['address']
+        student_info = Students_detail(roll_number=s_roll,student_name = s_name, year = s_study_year,father_name = s_father_name,mobile_number = s_mobile,mail=s_gmail,address=s_add)
+        student_info.save()
+        return render(request,'student_detail.html')
+    
 
 def add_marks(request):
-    m_roll = request.POST['roll_number']
-    m_name = request.POST['student_name']
-    m_year  = request.POST['year']
-    m_sub = request.POST['subject']
-    m_exam_type = request.POST['exam_type']
-    m_obt_marks = request.POST['obtained_marks']
-    m_total_marks = request.POST['total_marks']
-    marks_info = Marks_detail(roll_number = m_roll, student_name = m_name, year = m_year,subject_name = m_sub, exam_type = m_exam_type,total_marks= m_total_marks,obtained_marks = m_obt_marks)
-    marks_info.save()
-    return render(request,'marks.html')
+    if request.method=='POST':
+        m_roll = request.POST['roll_number']
+        m_name = request.POST['student_name']
+        m_year  = request.POST['year']
+        m_sub = request.POST['subject']
+        m_exam_type = request.POST['exam_type']
+        m_obt_marks = request.POST['obtained_marks']
+        m_total_marks = request.POST['total_marks']
+        marks_info = Marks_detail(roll_number = m_roll, student_name = m_name, year = m_year,subject_name = m_sub, exam_type = m_exam_type,total_marks= m_total_marks,obtained_marks = m_obt_marks)
+        marks_info.save()
+        messages.success(request, "Added Successfully")
+        return render(request,'marks.html')
+
 
 def view_students(request):
-    study_year = request.POST['year']
-    row = Students_detail.objects.filter(year = study_year)
-    return render(request, 'student_detail.html',{'data':row})
+    if request.method=='POST':
+        study_year = request.POST['year']
+        row = Students_detail.objects.filter(year = study_year)
+        return render(request, 'student_detail.html',{'data':row})
 
 def view_marks(request):
-    study_year = request.POST['year']
-    subject = request.POST['subject']
-    exam = request.POST['exam_type']
-    print(study_year,subject,exam)
-    row = Marks_detail.objects.filter(year=study_year,subject_name=subject,exam_type=exam)
-    print(row)
-    return render(request,'marks.html',{'data':row})
+    if request.method=='POST':
+        study_year = request.POST['year']
+        subject = request.POST['subject']
+        exam = request.POST['exam_type']
+        row = Marks_detail.objects.filter(year=study_year,subject_name=subject,exam_type=exam)
+        return render(request,'marks.html',{'data':row})
 
 
     
