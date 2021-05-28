@@ -4,7 +4,9 @@ from . import views
 
 urlpatterns = [
     path('',views.login,name='login'),
+    path('logout',views.logout,name='logout'),
     path('home',views.home, name='home'),
+     path('admin_temp',views.admin_temp, name='admin_temp'),
     path('student_detail',views.student_detail,name='student_detail'),
     path('marks_detail',views.marks_detail,name='marks_detail'),
     path('time_table',views.time_table,name='time_table'),
@@ -12,6 +14,11 @@ urlpatterns = [
     path('add_marks',views.add_marks,name='add_marks'),
     path('view_students',views.view_students,name='view_students'),
     path('view_marks',views.view_marks,name='view_marks'),
-
+    path('delete_student',views.delete_student,name='delete_student'),
+    path('delete_marks',views.delete_marks,name='detele_marks'),
+    path('update_marks',views.update_marks,name='update_marks'),
+    path('update_student',views.update_student,name='update_student'),
     
 ]
+
+

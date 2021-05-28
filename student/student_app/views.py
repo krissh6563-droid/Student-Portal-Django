@@ -1,5 +1,3 @@
-# Create your views here.
-from django.db import connections, connection
 from django.shortcuts import redirect, render
 from django.http import HttpResponse, request
 from .models import Students_detail
@@ -11,6 +9,14 @@ from django.contrib.auth.models import User,auth
 
 def home(request):
     return render(request,'home.html')
+
+def logout(request):
+    auth.logout(request)
+    return redirect('/')
+
+def admin_temp(request):
+    return render(request,'admin_temp.html')
+
 
 def student_detail(request):
     return render(request,'student_detail.html')
@@ -44,6 +50,17 @@ def add_student_detail(request):
         s_add = request.POST['address']
         student_info = Students_detail(roll_number=s_roll,student_name = s_name, year = s_study_year,father_name = s_father_name,mobile_number = s_mobile,mail=s_gmail,address=s_add)
         student_info.save()
+        messages.success(request, "Record added Successfully")
+        return render(request,'student_detail.html')
+        #return None
+
+def delete_student(request):
+    if request.method=='POST':
+        roll_no = request.POST['roll_number']
+        temp = Students_detail.objects.get(roll_number=roll_no)
+        temp.delete()
+        messages.success(request, "Record deleted Successfully")
+        
         return render(request,'student_detail.html')
     
 
@@ -58,8 +75,9 @@ def add_marks(request):
         m_total_marks = request.POST['total_marks']
         marks_info = Marks_detail(roll_number = m_roll, student_name = m_name, year = m_year,subject_name = m_sub, exam_type = m_exam_type,total_marks= m_total_marks,obtained_marks = m_obt_marks)
         marks_info.save()
-        messages.success(request, "Added Successfully")
+        messages.success(request, "Record added Successfully")
         return render(request,'marks.html')
+        #return None
 
 
 def view_students(request):
@@ -75,6 +93,34 @@ def view_marks(request):
         exam = request.POST['exam_type']
         row = Marks_detail.objects.filter(year=study_year,subject_name=subject,exam_type=exam)
         return render(request,'marks.html',{'data':row})
+
+def delete_marks(request):
+    if request.method=='POST':
+        roll_no = request.POST['roll_number']
+        sub_name = request.POST['subject_name']
+        ex_type = request.POST['exam_type']
+        temp = Marks_detail.objects.filter(roll_number = roll_no,subject_name=sub_name,exam_type=ex_type)
+        temp.delete()
+        messages.success(request, "Record deleted Successfully")
+        return render(request,'marks.html')
+
+def update_marks(request):
+    if request.method=='POST':
+        roll_no = request.POST['roll_number']
+        sub_name = request.POST['subject_name']
+        ex_type = request.POST['exam_type']
+        obt_marks = request.POST['obtained_marks']
+        temp = Marks_detail.objects.get(roll_number = roll_no,subject_name=sub_name,exam_type=ex_type)
+        temp.obtained_marks = obt_marks
+        temp.save()
+        messages.success(request, "Record updated Successfully")
+        return render(request,'marks.html')
+
+def update_student(request):
+    pass
+
+
+
 
 
     

@@ -27,15 +27,22 @@
                     <li class="nav-item"><a class="nav-link" href="{% url 'student_detail' %}">Student Detail</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'marks_detail' %}">Marks</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'time_table' %}">Time Table</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Logout</a></li>
+                    <!--<li class="nav-item"><a class="nav-link" href="{% url 'admin_temp' %}">Admin</a></li>
+                    -->
+                    
+                    <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
                 </ul>
             </div>
         </div>
     </nav>
+
+
     
     {% block content %}
     
     {% endblock %}
+
+    
     
     <footer class="footer-dark">
         <div class="container">
@@ -47,16 +54,19 @@
                 <div class="col-sm-6 col-md-3 item">
                     <h3>Faculty&nbsp;</h3>
                     <ul>
-                        <li><a href="#">Mrs. Sangeeta Lalwani</a></li>
-                        <li><a href="#">Miss. Kajal</a></li>
-                        <li><a href="#">Miss. Anushka Sen</a></li>
+                        <li>Mrs. Sangeeta Lalwani</li>
+                        <li>Mohd. Arif </li>
                     </ul>
                 </div>
                 <div class="col-md-6 item text">
                     <h3>Rajshree Institute of Management &amp; Technology, Bareilly (U.P)</h3>
                     <p>Address :&nbsp;16 KM, National Highway 30, Pilibhit Rd, Bareilly, Uttar Pradesh 243122<br>Phone No: 09690000100</p>
                 </div>
-                <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-linkedin"></i></a><a href="#"><i class="icon ion-social-github"></i></a></div>
+                <div class="col item social"><a href="https://www.facebook.com/krissh6563/" target="_blank" ><i class="icon ion-social-facebook"></i>
+                </a><a href="https://twitter.com/krissh6563" target="_blank" ><i class="icon ion-social-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/krissh6563/" target="_blank"><i class="icon ion-social-linkedin"></i></a>
+                <a href="https://github.com/krissh6563-droid" target="_blank"><i class="icon ion-social-github"></i></a>
+            </div>
             </div>
             <p class="copyright">krissh6563 © 2021</p>
         </div>
@@ -65,10 +75,26 @@
     <script src="{% static 'assets/js/jquery.min.js' %}"></script>
     <script src="{% static 'assets/bootstrap/js/bootstrap.min.js' %}"></script>
     <script src="{% static 'assets/js/bs-init.js' %}"></script>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script>
-        swal("Added Successfully")
-    </script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+
+    {% if messages %}
+        {% for m in messages %}
+            <script>
+                swal({
+                    title: "Good job!",
+                    text: "{{m}}",
+                    icon: "success",
+                    
+                  });
+            </script>
+        {% endfor %}
+    {% endif %}
+
+    {% block js %}
+
+    {% endblock %}
+    
 </body>
 
 </html>

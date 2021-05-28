@@ -9,26 +9,33 @@
             <li class="nav-item"><a class="nav-link active" id="item-1-1-tab" data-toggle="tab" role="tab"
                     aria-controls="item-1-1" aria-selected="true" href="#item-1-1">View Marks</a></li>
             <li class="nav-item"><a class="nav-link" id="item-1-2-tab" data-toggle="tab" role="tab"
-                    aria-controls="item-1-2" aria-selected="false" href="#item-1-2">Add Record</a></li>
+                    aria-controls="item-1-2" aria-selected="false" href="#item-1-2">Add Marks</a></li>
+            <li class="nav-item"><a class="nav-link" id="item-1-2-tab" data-toggle="tab" role="tab"
+                    aria-controls="item-1-2" aria-selected="false" href="#item-1-3">Update Marks</a></li>
+            <li class="nav-item"><a class="nav-link" id="item-1-2-tab" data-toggle="tab" role="tab"
+                    aria-controls="item-1-2" aria-selected="false" href="#item-1-4">Delete Marks</a></li>
         </ul>
     </div>
     <div class="card-body">
         <div id="nav-tabContent" class="tab-content">
+
+            <!-- View marks section-->
             <div id="item-1-1" class="tab-pane fade show active" role="tabpanel" aria-labelledby="item-1-1-tab">
                 <div class="container">
-                    <form  action="/view_marks" method="POST" class="form-inline mb-2">
+                    <form action="/view_marks" method="POST" class="form-inline mb-2">
                         {% csrf_token %}
                         <div class="form-group">
                             <label class="mb-2">Select Year:</label>
-                            <select  class="form-control ml-2 mb-2" name="year">
+                            <select class="form-control ml-2 mb-2" name="year">
                                 <option>1</option>
                                 <option>2</option>
                                 <option>3</option>
                                 <option>4</option>
                             </select>
-                            <input class="form-control mb-2 ml-2" type="text" name="subject" placeholder="Input Subject">
+                            <input class="form-control mb-2 ml-2" type="text" name="subject" placeholder="Input Subject"
+                                required>
                             <label class="mb-2 ml-2">Exam Type:</label>
-                            <select  class="form-control mb-2 ml-2" name="exam_type">
+                            <select class="form-control mb-2 ml-2" name="exam_type">
                                 <option>UT_1</option>
                                 <option>UT_2</option>
                                 <option>UT_3</option>
@@ -36,8 +43,8 @@
                                 <option>Pre_Exam_1</option>
                                 <option>Pre_Exam_2</option>
                             </select>
+                            <button class="btn btn-primary ml-2 mb-2" type="submit">View</button>
                         </div>
-                        <button class="btn btn-primary ml-2 mb-2" type="submit">View</button>
                     </form>
                     <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
                         <thead>
@@ -67,17 +74,20 @@
                     </table>
                 </div>
             </div>
+
+            <!-- add marks section-->
             <div id="item-1-2" class="tab-pane fade" role="tabpanel" aria-labelledby="item-1-2-tab">
                 <form action="/add_marks" method="POST">
                     {% csrf_token %}
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label>Roll No.</label>
-                            <input type="text" class="form-control" name="roll_number" placeholder="Roll Number">
+                            <input type="text" class="form-control" name="roll_number" placeholder="XXX1747XXXX53"
+                                pattern="[0-9]{13}" required>
                         </div>
                         <div class="form-group col-md-6">
                             <label>Student Name</label>
-                            <input type="text" class="form-control" name="student_name" placeholder="Name">
+                            <input type="text" class="form-control" name="student_name" placeholder="Name" required>
                         </div>
                     </div>
                     <div class="form-row">
@@ -94,7 +104,7 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label>Subject</label>
-                            <input type="text" class="form-control" name="subject" placeholder="Subject">
+                            <input type="text" class="form-control" name="subject" placeholder="Subject" required>
                         </div>
                     </div>
                     <div class="form-row">
@@ -113,14 +123,106 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label>Marks Obtained</label>
-                            <input type="text" class="form-control" name="obtained_marks" placeholder="Marks Obtained">
+                            <input type="text" class="form-control" name="obtained_marks" placeholder="Marks Obtained"
+                                 required>
                         </div>
                         <div class="form-group col-md-6">
                             <label>Total Marks</label>
-                            <input type="text" class="form-control" name="total_marks" placeholder="Total Marks">
+                            <input type="text" class="form-control" name="total_marks" placeholder="Total Marks"
+                                 required>
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary">Add Marks</button>
+                </form>
+            </div>
+
+            <!-- Update marks section-->
+            <div id="item-1-3" class="tab-pane fade" role="tabpanel" aria-labelledby="item-1-3-tab">
+                <form action="/update_marks" method="POST">
+                    {% csrf_token %}
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label>Roll No.</label>
+                            <input type="text" class="form-control" name="roll_number" placeholder="XXX1747XXXX53"
+                                pattern="[0-9]{13}" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Subjec Name</label>
+                            <input type="text" class="form-control" name="subject_name" placeholder="Name" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label>Year</label>
+                            <select id="inputState" class="form-control" name="year">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Exam Type</label>
+                            <select id="inputState" class="form-control" name="exam_type">
+                                <option>UT_1</option>
+                                <option>UT_2</option>
+                                <option>UT_3</option>
+                                <option>UT_4</option>
+                                <option>Pre_Exam_1</option>
+                                <option>Pre_Exam_2</option>
+                            </select>
+                        </div>
+                    </div>
+                   
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label>Marks Obtained</label>
+                            <input type="text" class="form-control" name="obtained_marks" placeholder="Marks Obtained"
+                                 required>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Update Marks</button>
+                </form>
+            </div>
+
+
+            <!-- Delete marks section-->
+            <div id="item-1-4" class="tab-pane fade" role="tabpanel" aria-labelledby="item-1-4-tab">
+                <form action="/delete_marks" method="POST">
+                    {% csrf_token %}
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <div class="form-group">
+                                <label>Roll Number</label>
+                                <input type="text" class="form-control" name="roll_number" placeholder="XXX1747XXXX53"
+                                    pattern="[0-9]{13}" required>
+                            </div>
+                            <label>Exam Type</label>
+                            <select class="form-control" name="exam_type">
+                                <option>UT_1</option>
+                                <option>UT_2</option>
+                                <option>UT_3</option>
+                                <option>UT_4</option>
+                                <option>Pre_Exam_1</option>
+                                <option>Pre_Exam_2</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <div class="form-group">
+                                <label>Subject</label>
+                                <input type="text" class="form-control" name="subject_name" placeholder="Suject Name"
+                                    required>
+                            </div>
+                            <label>Year</label>
+                            <select class="form-control" name="year">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Delete</button>
+                    </div>
                 </form>
             </div>
         </div>
