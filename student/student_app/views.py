@@ -1,6 +1,6 @@
 from django.shortcuts import redirect, render
 from django.http import HttpResponse, request
-from .models import Students_detail
+from .models import Students_detail, Time_table
 from .models import Marks_detail
 from django.contrib import messages
 from django.contrib.auth.models import User,auth
@@ -10,14 +10,6 @@ from django.contrib.auth.models import User,auth
 def home(request):
     return render(request,'home.html')
 
-def logout(request):
-    auth.logout(request)
-    return redirect('/')
-
-def admin_temp(request):
-    return render(request,'admin_temp.html')
-
-
 def student_detail(request):
     return render(request,'student_detail.html')
 
@@ -25,7 +17,12 @@ def marks_detail(request):
     return render(request,'marks.html')
 
 def time_table(request):
-    return render(request,'time_table.html')
+    row_1 = Time_table.objects.filter(year=1)
+    row_2 = Time_table.objects.filter(year=2)
+    row_3 = Time_table.objects.filter(year=3)
+    row_4 = Time_table.objects.filter(year=4)
+    
+    return render(request,'time_table.html',{'data':row_1})
 
 def login(request):
     if request.method=='POST':
@@ -35,9 +32,19 @@ def login(request):
         if user is not None:
             auth.login(request,user)
             return render(request,'home.html')
-    
-
     return render(request, 'login.html')
+
+def logout(request):
+    auth.logout(request)
+    return redirect('/')
+
+
+def view_students(request):
+    if request.method=='POST':
+        study_year = request.POST['year']
+        roll_no = request.POST['roll_number']
+        row = Students_detail.objects.filter(roll_number = roll_no)
+        return render(request, 'student_detail.html',{'data':row})
 
 def add_student_detail(request):
     if request.method=='POST':
@@ -52,7 +59,10 @@ def add_student_detail(request):
         student_info.save()
         messages.success(request, "Record added Successfully")
         return render(request,'student_detail.html')
-        #return None
+
+def update_student(request):
+    pass
+
 
 def delete_student(request):
     if request.method=='POST':
@@ -60,9 +70,15 @@ def delete_student(request):
         temp = Students_detail.objects.get(roll_number=roll_no)
         temp.delete()
         messages.success(request, "Record deleted Successfully")
-        
         return render(request,'student_detail.html')
     
+def view_marks(request):
+    if request.method=='POST':
+        study_year = request.POST['year']
+        subject = request.POST['subject']
+        exam = request.POST['exam_type']
+        row = Marks_detail.objects.filter(year=study_year,subject_name=subject,exam_type=exam)
+        return render(request,'marks.html',{'data':row})
 
 def add_marks(request):
     if request.method=='POST':
@@ -77,32 +93,6 @@ def add_marks(request):
         marks_info.save()
         messages.success(request, "Record added Successfully")
         return render(request,'marks.html')
-        #return None
-
-
-def view_students(request):
-    if request.method=='POST':
-        study_year = request.POST['year']
-        row = Students_detail.objects.filter(year = study_year)
-        return render(request, 'student_detail.html',{'data':row})
-
-def view_marks(request):
-    if request.method=='POST':
-        study_year = request.POST['year']
-        subject = request.POST['subject']
-        exam = request.POST['exam_type']
-        row = Marks_detail.objects.filter(year=study_year,subject_name=subject,exam_type=exam)
-        return render(request,'marks.html',{'data':row})
-
-def delete_marks(request):
-    if request.method=='POST':
-        roll_no = request.POST['roll_number']
-        sub_name = request.POST['subject_name']
-        ex_type = request.POST['exam_type']
-        temp = Marks_detail.objects.filter(roll_number = roll_no,subject_name=sub_name,exam_type=ex_type)
-        temp.delete()
-        messages.success(request, "Record deleted Successfully")
-        return render(request,'marks.html')
 
 def update_marks(request):
     if request.method=='POST':
@@ -115,9 +105,20 @@ def update_marks(request):
         temp.save()
         messages.success(request, "Record updated Successfully")
         return render(request,'marks.html')
+        
 
-def update_student(request):
-    pass
+def delete_marks(request):
+    if request.method=='POST':
+        roll_no = request.POST['roll_number']
+        sub_name = request.POST['subject_name']
+        ex_type = request.POST['exam_type']
+        temp = Marks_detail.objects.filter(roll_number = roll_no,subject_name=sub_name,exam_type=ex_type)
+        temp.delete()
+        messages.success(request, "Record deleted Successfully")
+        return render(request,'marks.html')
+
+
+
 
 
 

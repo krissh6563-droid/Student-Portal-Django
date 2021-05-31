@@ -1,5 +1,5 @@
 {
     "python.linting.pylintEnabled": true,
     "python.linting.enabled": true,
-    "python.pythonPath": "erp_env\\Scripts\\python.exe"
+    "python.pythonPath": "student_env\\Scripts\\python.exe"
 }

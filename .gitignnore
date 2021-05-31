@@ -1,3 +1,7 @@
 .vscode/
-erp_env/
+.idea/
+student_env/
+*.log
+*.pot
+*.pyc
 

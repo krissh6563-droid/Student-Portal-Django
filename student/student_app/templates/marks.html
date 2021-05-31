@@ -123,13 +123,13 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label>Marks Obtained</label>
-                            <input type="text" class="form-control" name="obtained_marks" placeholder="Marks Obtained"
-                                 required>
+                            <input type="text" class="form-control" name="obtained_marks" pattern="[0-9]" placeholder="Marks Obtained"
+                                required>
                         </div>
                         <div class="form-group col-md-6">
                             <label>Total Marks</label>
-                            <input type="text" class="form-control" name="total_marks" placeholder="Total Marks"
-                                 required>
+                            <input type="text" class="form-control" name="total_marks" pattern="[0-9]" placeholder="Total Marks"
+                                required>
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary">Add Marks</button>
@@ -154,7 +154,7 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label>Year</label>
-                            <select id="inputState" class="form-control" name="year">
+                            <select class="form-control" name="year">
                                 <option>1</option>
                                 <option>2</option>
                                 <option>3</option>
@@ -163,7 +163,7 @@
                         </div>
                         <div class="form-group col-md-6">
                             <label>Exam Type</label>
-                            <select id="inputState" class="form-control" name="exam_type">
+                            <select class="form-control" name="exam_type">
                                 <option>UT_1</option>
                                 <option>UT_2</option>
                                 <option>UT_3</option>
@@ -173,12 +173,12 @@
                             </select>
                         </div>
                     </div>
-                   
+
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label>Marks Obtained</label>
                             <input type="text" class="form-control" name="obtained_marks" placeholder="Marks Obtained"
-                                 required>
+                                required>
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary">Update Marks</button>

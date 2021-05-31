@@ -20,16 +20,15 @@
 
 <body>
     <nav class="navbar navbar-light navbar-expand-md shadow">
-        <div class="container-fluid"><a class="navbar-brand" href="#">RIMT</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="container-fluid"><a class="navbar-brand" href="#">RIMT</a><button data-toggle="collapse"
+                class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span
+                    class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item"><a class="nav-link active" href="{% url 'home' %}">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'student_detail' %}">Student Detail</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'marks_detail' %}">Marks</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'time_table' %}">Time Table</a></li>
-                    <!--<li class="nav-item"><a class="nav-link" href="{% url 'admin_temp' %}">Admin</a></li>
-                    -->
-                    
                     <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
                 </ul>
             </div>
@@ -37,13 +36,13 @@
     </nav>
 
 
-    
+
     {% block content %}
-    
+
     {% endblock %}
 
-    
-    
+
+
     <footer class="footer-dark">
         <div class="container">
             <div class="row">
@@ -60,13 +59,18 @@
                 </div>
                 <div class="col-md-6 item text">
                     <h3>Rajshree Institute of Management &amp; Technology, Bareilly (U.P)</h3>
-                    <p>Address :&nbsp;16 KM, National Highway 30, Pilibhit Rd, Bareilly, Uttar Pradesh 243122<br>Phone No: 09690000100</p>
+                    <p>Address :&nbsp;16 KM, National Highway 30, Pilibhit Rd, Bareilly, Uttar Pradesh 243122<br>Phone
+                        No: 09690000100</p>
                 </div>
-                <div class="col item social"><a href="https://www.facebook.com/krissh6563/" target="_blank" ><i class="icon ion-social-facebook"></i>
-                </a><a href="https://twitter.com/krissh6563" target="_blank" ><i class="icon ion-social-twitter"></i></a>
-                <a href="https://www.linkedin.com/in/krissh6563/" target="_blank"><i class="icon ion-social-linkedin"></i></a>
-                <a href="https://github.com/krissh6563-droid" target="_blank"><i class="icon ion-social-github"></i></a>
-            </div>
+                <div class="col item social"><a href="https://www.facebook.com/krissh6563/" target="_blank"><i
+                            class="icon ion-social-facebook"></i>
+                    </a><a href="https://twitter.com/krissh6563" target="_blank"><i
+                            class="icon ion-social-twitter"></i></a>
+                    <a href="https://www.linkedin.com/in/krissh6563/" target="_blank"><i
+                            class="icon ion-social-linkedin"></i></a>
+                    <a href="https://github.com/krissh6563-droid" target="_blank"><i
+                            class="icon ion-social-github"></i></a>
+                </div>
             </div>
             <p class="copyright">krissh6563 © 2021</p>
         </div>
@@ -79,22 +83,22 @@
 
 
     {% if messages %}
-        {% for m in messages %}
-            <script>
-                swal({
-                    title: "Good job!",
-                    text: "{{m}}",
-                    icon: "success",
-                    
-                  });
-            </script>
-        {% endfor %}
+    {% for m in messages %}
+    <script>
+        swal({
+            title: "Good job!",
+            text: "{{m}}",
+            icon: "success",
+
+        });
+    </script>
+    {% endfor %}
     {% endif %}
 
     {% block js %}
 
     {% endblock %}
-    
+
 </body>
 
 </html>
