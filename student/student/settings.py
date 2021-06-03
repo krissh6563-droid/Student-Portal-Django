@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-ein5ducb+_mvrwhf*e7=5eeo+=ovfgd2bu=6k@+ys+9&5jv(ld
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1','student_portal_rimt.com']
+ALLOWED_HOSTS = ['127.0.0.1','student-portal-rimt.herokuapp.com']
 
 MESSAGE_STORAGE = "django.contrib.messages.storage.cookie.CookieStorage"
 
