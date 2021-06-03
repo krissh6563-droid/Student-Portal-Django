@@ -7,7 +7,9 @@ Screenshot of the projects:
 
 
 Tools: VS code , Django, Python Programming, MySQL/PostgreSQL
+
 Step to execute this project:
+
 1. Clone the repository 
 2. Make virtual inviroment and in run pip install requirement.txt
 3. Deploy it on any plateform like Heroku, AWS and any other.
