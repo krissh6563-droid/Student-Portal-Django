@@ -94,7 +94,7 @@ WSGI_APPLICATION = 'student.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'student',
+        'NAME': 'student_portal',
         'USER': 'postgres',
         'PASSWORD': 'Aditya2000@@',
         'HOST': 'localhost',

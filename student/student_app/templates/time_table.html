@@ -4,81 +4,22 @@
 
 {% block content %}
 
-<div class="card">
-    <div class="card-header">
-        <ul class="nav nav-tabs card-header-tabs" role="tablist">
-            <li class="nav-item"><a class="nav-link active" id="item-1-1-tab" data-toggle="tab" role="tab"
-                    aria-controls="item-1-1" aria-selected="true" href="#item-1-1">First Year</a></li>
-            <li class="nav-item"><a class="nav-link" id="item-1-2-tab" data-toggle="tab" role="tab"
-                    aria-controls="item-1-2" aria-selected="false" href="#item-1-2">Second Year</a></li>
-            <li class="nav-item"><a class="nav-link" id="item-1-3-tab" data-toggle="tab" role="tab"
-                    aria-controls="item-1-3" aria-selected="false" href="#item-1-3">Third Year</a></li>
-            <li class="nav-item"><a class="nav-link" id="item-1-4-tab" data-toggle="tab" role="tab"
-                    aria-controls="item-1-4" aria-selected="false" href="#item-1-4">Fourth Year</a></li>
-        </ul>
-    </div>
-    <div class="card-body">
-        <div id="nav-tabContent" class="tab-content">
-            <div id="item-1-1" class="tab-pane fade show active" role="tabpanel" aria-labelledby="item-1-1-tab">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-10 col-xl-8 offset-lg-1 offset-xl-2" style="text-align: center;">
-                            <div id="time_table" class="intro" style="text-align: center;"><img class="img-fluid"
-                                    src="{% static 'assets/img/desk.jpg' %}">
-                                <a class="btn btn-primary mt-2" href="{% static 'assets/img/desk.jpg' %}"
-                                    download>Download</a>
-                                <!--<button class="btn btn-primary" type="button">Download</button>
-                                    -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
+{% for item in data %}
+<div class="container mt-4">
+    <div class="row">
+        <div class="col" style="text-align: center;">
+            <div>
+                <h4 style="text-align: center;">{{ item.year}} Year</h4>
             </div>
-            <div id="item-1-2" class="tab-pane fade" role="tabpanel" aria-labelledby="item-1-2-tab">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-10 col-xl-8 offset-lg-1 offset-xl-2" style="text-align: center;">
-                            <div id="time_table" class="intro" style="text-align: center;"><img class="img-fluid"
-                                    src="{% static 'assets/img/desk.jpg' %}">
-                                <!--<button class="btn btn-primary"
-                                    type="button">Download</button>
-                                    -->
-                                <a class="btn btn-primary mt-2" href="{% static 'assets/img/desk.jpg' %}"
-                                    download>Download</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div id="time_table" class="intro" style="text-align: center;"><img class="img-fluid"
+                    src="{{ itme.time_table_img }}">
             </div>
-            <div id="item-1-3" class="tab-pane fade" role="tabpanel" aria-labelledby="item-1-3-tab">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-10 col-xl-8 offset-lg-1 offset-xl-2" style="text-align: center;">
-                            <div id="time_table" class="intro" style="text-align: center;"><img class="img-fluid"
-                                    src="{% static 'assets/img/desk.jpg' %}">
-                                
-                                <a class="btn btn-primary mt-2" href="{% static 'assets/img/desk.jpg' %}"
-                                    download>Download</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="item-1-4" class="tab-pane fade" role="tabpanel" aria-labelledby="item-1-4-tab">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-10 col-xl-8 offset-lg-1 offset-xl-2" style="text-align: center;">
-                            <div id="time_table" class="intro" style="text-align: center;"><img class="img-fluid"
-                                    src="{% static 'assets/img/desk.jpg' %}">
-                                <a class="btn btn-primary mt-2" href="{% static 'assets/img/desk.jpg' %}"
-                                    download>Button</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div>
+                <a class="btn btn-primary mt-2" href="#" download>Download</a>
             </div>
         </div>
     </div>
 </div>
+{% endfor %}
 
 {% endblock %}

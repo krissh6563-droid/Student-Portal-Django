@@ -17,12 +17,9 @@ def marks_detail(request):
     return render(request,'marks.html')
 
 def time_table(request):
-    row_1 = Time_table.objects.filter(year=1)
-    row_2 = Time_table.objects.filter(year=2)
-    row_3 = Time_table.objects.filter(year=3)
-    row_4 = Time_table.objects.filter(year=4)
-    
-    return render(request,'time_table.html',{'data':row_1})
+    row = Time_table.objects.all()
+   
+    return render(request,'time_table.html',{'data':row})
 
 def login(request):
     if request.method=='POST':

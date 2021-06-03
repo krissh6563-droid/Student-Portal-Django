@@ -1,6 +1,6 @@
 .vscode/
 .idea/
-student_env/
+portal_erp/
 *.log
 *.pot
 *.pyc
