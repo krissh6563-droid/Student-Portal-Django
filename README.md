@@ -5,3 +5,9 @@ Screenshot of the projects:
 
 ![Screenshot (194)](https://user-images.githubusercontent.com/56572543/119272489-c5013500-bc23-11eb-8caf-07ced0a01b29.png)
 
+
+Tools: VS code , Django, Python Programming, MySQL/PostgreSQL
+Step to execute this project:
+1. Clone the repository 
+2. Make virtual inviroment and install Django
+
