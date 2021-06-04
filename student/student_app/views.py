@@ -117,6 +117,8 @@ def delete_marks(request):
         messages.success(request, "Record deleted Successfully")
         return render(request,'marks.html')
 
+def attendance(request):
+    return render(request, 'attendance.html')
 
 
 

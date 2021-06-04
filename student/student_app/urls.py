@@ -17,6 +17,7 @@ urlpatterns = [
     path('delete_marks',views.delete_marks,name='detele_marks'),
     path('update_marks',views.update_marks,name='update_marks'),
     path('update_student',views.update_student,name='update_student'),
+    path('attendance',views.attendance,name='attendance'),
     
 ]
 
