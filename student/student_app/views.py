@@ -72,10 +72,13 @@ def delete_student(request):
 def view_marks(request):
     if request.method=='POST':
         study_year = request.POST['year']
-        subject = request.POST['subject']
+        roll_no = request.POST['roll_number']
         exam = request.POST['exam_type']
-        row = Marks_detail.objects.filter(year=study_year,subject_name=subject,exam_type=exam)
-        return render(request,'marks.html',{'data':row})
+        row_1 = Students_detail.objects.filter(roll_number = roll_no)
+        row_2 = Marks_detail.objects.filter(year=study_year,roll_number =roll_no,exam_type=exam)
+        row_3 = Marks_detail.objects.filter(year=study_year,roll_number =roll_no,exam_type=exam)[0:1]
+        
+        return render(request,'marks.html',{'data_1':row_1,'data_2':row_2,'data_3':row_3 })
 
 def add_marks(request):
     if request.method=='POST':
